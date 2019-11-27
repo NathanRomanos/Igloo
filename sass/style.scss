@@ -6,7 +6,15 @@
 
 
 
-
-*{
-  background-color: wheat;
+.header {
+  position: relative;
+  .headerImg {
+    width: 100vw;
+  }
+  .headerLogo {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 35%;
+  }
 }

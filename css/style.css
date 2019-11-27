@@ -5,7 +5,14 @@
   scroll-behavior: smooth;
   box-sizing: border-box; }
 
-* {
-  background-color: wheat; }
+.header {
+  position: relative; }
+  .header .headerImg {
+    width: 100vw; }
+  .header .headerLogo {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 35%; }
 
 /*# sourceMappingURL=style.css.map */
