@@ -2,19 +2,74 @@
 @import "variables";
 @import "functions";
 @import "mixins";
+@import "header";
 
 
+.searchBox {
+  width: 30vw;
+  height: 30vw;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 30%;
+  right: 15%;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
 
-
-.header {
-  position: relative;
-  .headerImg {
-    width: 100vw;
+  .searchBox-date {
+    flex-basis: 45%;
+    height: 30px;
   }
-  .headerLogo {
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    width: 35%;
+
+  .searchBox-guests {
+    flex-basis: 45%;
+    height: 30px;
+
+    h2 {
+      display: inline-block;
+      width: 50%;
+      height: 30px;
+      background-color: white;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+      border: none;
+      margin-bottom: 0;
+      font-size: 1.5rem;
+      line-height: 100%;
+      text-align: center;
+    }
+
+    p{
+      display: inline-block;
+      height: 30px;
+      width: 15%;
+      font-size: 1.5rem;
+      line-height: 100%;
+      background-color: gainsboro;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+
   }
+}
+
+label {
+  margin-bottom: 0;
+}
+
+input {
+  background-color: white;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  border: none;
+  width: 20px;
+}
+
+
+.backLink {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 }
