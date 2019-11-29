@@ -32,35 +32,71 @@
 
 <!-- LANDING PAGE SEARCH FUNCTION -->
     <div class="searchBox">
-      <label for="startDate" class="black searchBox-date"> Check In </label>
 
-      <label for="endDate" class="black searchBox-date"> Check Out </label>
+      <!-- FLEXBOX DIVIDING SPACE -->
+      <div class="Searchbox-space"></div>
+
+      <!-- SEARCHBOX DATE -->
+      <label for="startDate" class="black searchBox-label"> Check In </label>
+
+      <label for="endDate" class="black searchBox-label"> Check Out </label>
 
       <input type="text" id="startDate" class="searchBox-date" name="startDate">
 
       <input type="text" id="endDate" class="searchBox-date" name="endDate">
 
-      <label for="adults" class="black searchBox-guests"> Adults </label>
+      <!-- FLEXBOX DIVIDING SPACE -->
+      <div class="Searchbox-space"></div>
 
-      <label for="children" class="black searchBox-guests"> Children </label>
+      <!-- SEACHBOX GUESTS -->
+      <label for="adult" class="black searchBox-label"> Adults </label>
+
+      <label for="child" class="black searchBox-label"> Children </label>
 
       <div class="searchBox-guests">
-        <p id="adultMinus">-</p>
-        <h2 id="adults"></h2>
-        <p id="adultPlus">+</p>
+        <img id="adultMinus" class="searchBox-left" src="images/icons/rightArrow.svg"></img>
+        <h2 id="adult"></h2>
+        <img id="adultPlus" class="searchBox-right" src="images/icons/rightArrow.svg"></img>
       </div>
 
       <div class="searchBox-guests">
-        <p>-</p>
-        <input type="number"  min="0" max="6"  id="children" name="children">
-        <p>+</p>
+        <img id="childMinus" class="searchBox-left" src="images/icons/rightArrow.svg"></img>
+        <h2 id="child"></h2>
+        <img id="childPlus" class="searchBox-right" src="images/icons/rightArrow.svg"></img>
       </div>
-    </div>
+
+      <!-- FLEXBOX DIVIDING SPACE -->
+      <div class="Searchbox-space"></div>
+
+      <!-- SEARCHBOX SEARCH BUTTON -->
+      <input type="button" name="submit" class="btn btn-lg btn-dark"  id="submit1" value="Submit">
+
+    </div> <!-- SearchBox ends here -->
 
 
     <!-- LANDING PAGE BACK LINK -->
     <div class="backLink">
       <a href="https://www.newzealand.com/int/skiing%2Bqueenstown-wanaka/" target="_blank">| Back to NewZealand.com</a>
+    </div>
+
+
+
+
+    <div class="resultContainer">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Features</a>
+            <a class="nav-item nav-link" href="#">Pricing</a>
+            <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </div>
+        </div>
+      </nav>
     </div>
 
 

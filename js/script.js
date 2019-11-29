@@ -38,23 +38,84 @@ $("#endDate").datepicker({
 
 });
 
-var number = 0;
+var adultNumber = 1;
+var childNumber = 0;
 
-document.getElementById('adults').innerText = number;
+$("#adultMinus").hide();
+$("#childMinus").hide();
+
+// ADULT GUEST FUNCTION
+document.getElementById('adult').innerText = adultNumber;
 
 $("#adultPlus").click(function(){
-  if (number < 6) {
-    number = number+1
+  $("#adultMinus").show();
+
+  if (adultNumber === 3) {
+    $("#adultPlus").hide();
+    $("#childMinus").hide();
+    adultNumber = adultNumber+1;
+    childNumber = 0;
+  } else if (((adultNumber + childNumber) > 3) && (adultNumber < 4)) {
+    childNumber = childNumber-1;
+    adultNumber = adultNumber+1;
+    $("#childPlus").show();
+  } else if (adultNumber < 4) {
+    adultNumber = adultNumber+1;
   };
-  document.getElementById('adults').innerText = number;
+  document.getElementById('adult').innerText = adultNumber;
+  document.getElementById('child').innerText = childNumber;
 });
 
 $("#adultMinus").click(function(){
-  if (number > 0) {
-    number = number-1
+  if (adultNumber === 2) {
+    $("#adultMinus").hide();
+    adultNumber = adultNumber-1;
+  } else if (adultNumber > 1) {
+    $("#adultPlus").show();
+    $("#childPlus").show();
+    adultNumber = adultNumber-1
   };
-  document.getElementById('adults').innerText = number;
+  document.getElementById('adult').innerText = adultNumber;
 });
+
+
+// child GUEST FUNCTION
+document.getElementById('child').innerText = childNumber;
+
+$("#childPlus").click(function(){
+  $("#childMinus").show();
+
+  if (childNumber === 2) {
+    $("#childPlus").hide();
+    $("#adultMinus").hide();
+    childNumber = childNumber+1;
+    adultNumber = 1;
+  } else if ((adultNumber === 1) && (childNumber === 3)){
+
+  } else if (((adultNumber + childNumber) > 3) && (childNumber < 4)) {
+    childNumber = childNumber+1;
+    adultNumber = adultNumber-1;
+    $("#adultPlus").show();
+  } else if (childNumber < 4) {
+    childNumber = childNumber+1
+  };
+  document.getElementById('child').innerText = childNumber;
+  document.getElementById('adult').innerText = adultNumber;
+});
+
+$("#childMinus").click(function(){
+  if (childNumber === 1) {
+    $("#childMinus").hide();
+    childNumber = childNumber-1;
+  } else if (childNumber > 0) {
+    $("#childPlus").show();
+    $("#adultPlus").show();
+    childNumber = childNumber-1
+  };
+  document.getElementById('child').innerText = childNumber;
+});
+
+
 
 
 //Find the number of days between dates
