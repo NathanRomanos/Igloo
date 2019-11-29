@@ -9,6 +9,10 @@
   font-family: geneva;
 }
 
+.landingPage{
+  width: 100%;
+  height: 100vh;
+}
 
 .backLink {
   position: absolute;
@@ -16,8 +20,16 @@
   left: 10px;
 }
 
-.resultContainer {
-  position: absolute;
-  top: 100vh;
-  width: 100%;
+// .resultContainer {
+//   position: absolute;
+//   top: 100vh;
+//   width: 100%;
+// }
+
+.navbar-brand {
+  width: 300px;
+}
+
+nav {
+  background-color: black;
 }
