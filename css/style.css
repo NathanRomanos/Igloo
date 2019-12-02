@@ -81,8 +81,47 @@ p, h1, h2, h3, h4, h5, h6, a {
 label {
   margin-bottom: 0; }
 
+.resultsPageContainer {
+  width: 100%;
+  height: 100vh; }
+
+nav {
+  height: 10vh; }
+
+.navbar-brand {
+  width: 250px; }
+
+.resultsContainer {
+  float: left;
+  width: 50%;
+  height: 90vh;
+  margin: 0;
+  position: relative;
+  display: flex; }
+
+.mapContainer {
+  float: right;
+  width: 50%;
+  height: 90vh;
+  border: 3px solid yellow;
+  margin: 0; }
+
+.cardDetails {
+  text-align: center; }
+
+.cardPrice {
+  text-align: right; }
+
+.card {
+  background-color: unset;
+  border: unset;
+  width: 34% !important; }
+
+.card-body {
+  padding: 0; }
+
 * {
-  font-family: geneva; }
+  font-family: geneva, sans-serif; }
 
 .landingPage {
   width: 100%;
@@ -92,11 +131,5 @@ label {
   position: absolute;
   bottom: 10px;
   left: 10px; }
-
-.navbar-brand {
-  width: 300px; }
-
-nav {
-  background-color: black; }
 
 /*# sourceMappingURL=style.css.map */

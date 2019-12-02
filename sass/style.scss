@@ -4,9 +4,10 @@
 @import "mixins";
 @import "header";
 @import "searchBox";
+@import "resultsPage";
 
 *{
-  font-family: geneva;
+  font-family: geneva, sans-serif;
 }
 
 .landingPage{
@@ -18,18 +19,4 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
-}
-
-// .resultContainer {
-//   position: absolute;
-//   top: 100vh;
-//   width: 100%;
-// }
-
-.navbar-brand {
-  width: 300px;
-}
-
-nav {
-  background-color: black;
 }
