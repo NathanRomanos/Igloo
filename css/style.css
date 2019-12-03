@@ -106,8 +106,14 @@ nav {
   border: 3px solid yellow;
   margin: 0; }
 
+.card-img-top {
+  border-bottom: 3px solid black;
+  overflow: hidden; }
+
 .cardDetails {
   text-align: center; }
+  .cardDetails img {
+    width: 25px; }
 
 .cardPrice {
   text-align: right; }

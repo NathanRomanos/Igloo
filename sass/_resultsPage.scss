@@ -29,8 +29,18 @@ nav {
   margin: 0;
 }
 
+.card-img-top {
+  border-bottom: 3px solid black;
+  overflow: hidden;
+}
+
 .cardDetails {
   text-align: center;
+
+  img {
+    width: 25px;
+  }
+
 }
 
 .cardPrice {
@@ -40,7 +50,8 @@ nav {
 .card {
   background-color: unset;
   border: unset;
-  width: 34% !important; 
+  width: 34% !important;
+
 }
 
 .card-body {

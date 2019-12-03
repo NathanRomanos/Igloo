@@ -1,7 +1,101 @@
 console.log('Working');
 
 
+var accom = [
+  {
+    name : "Matakauri Lodge",
+    id : "a101",
+    photo1 : "images/hotelMain2.jpg",
+    photo2 : "images/hotel2.jpg",
+    photo3 : "images/hotel3.jpg",
+    pricePerNight : 157,
+    minPeople : 1,
+    maxPeople : 2,
+    minNight : 1,
+    maxNight : 5,
+    type : "Hotel",
+    bed : 1,
+    bath : 1,
+    sleeps : 2,
+    food1 : "Room Service",
+    food2 : "On-site Restaurant",
+    food3 : "On-site Bar/Lounge",
+    food4 : "Coffee/Tea Facilities",
+    para : "Spectacularly situated on Lake Wakatipu, Matakauri Lodge offers stunning views from every angle of the Remarkable, Cecil and Walter Peak mountain ranges. Just seven minutes from Queenstown, Matakauri Lodge provides an alpine lakeside retreat amongst one of the world’s most serenely beautiful landscapes.",
+  },
+  {
+    name : "Nomads Queenstown Backpackers",
+    id : "a102",
+    photo1 : "images/hostelMain.jpg",
+    photo2 : "images/hostel2.jpg",
+    photo3 : "images/hostel3.jpg",
+    pricePerNight : 30,
+    minPeople : 1,
+    maxPeople : 1,
+    minNight : 1,
+    maxNight : 10,
+    type : "Hostel",
+    bed : 1,
+    bath : 1,
+    sleeps : 1,
+    food1 : "On-site Bar",
+    food2 : "Complimentary Tea/Coffee, and Toast each morning",
+    food3 : "Numerous restaurants and cafés nearby",
+    food4 : "",
+    para : "Designed for all budget travellers, this purpose built backpackers hostel has a variety of room types from small and large dorms, with or without en suites, to private en suite rooms with wide-screen cable TV.",
+  },
+  {
+    name : "Autoline Queenstown Motel",
+    id : "a103",
+    photo1 : "images/motelMain.jpg",
+    photo2 : "images/motel2.jpg",
+    photo3 : "images/motel3.jpg",
+    pricePerNight : 90,
+    minPeople : 2,
+    maxPeople : 4,
+    minNight : 3,
+    maxNight : 10,
+    type : "Motel",
+    bed : 2,
+    bath : 1,
+    sleeps : 4,
+    food1 : "Each room contains a kitchenette",
+    food2 : "Several restaurants within walking distance",
+    food3 : "Several cafés nearby",
+    food4 : "",
+    para : "Just 5 minutes’ walk from Lake Wakatipu, Autoline Queenstown Motel offers self-contained accommodation with a spa bath or a private balcony with mountain views. Guests enjoy free WiFi.",
+  },
+  {
+    name : "Mountain & Lake Views",
+    id : "a104",
+    photo1 : "images/houseMain.jpg",
+    photo2 : "images/house2.jpg",
+    photo3 : "images/house3.jpg",
+    pricePerNight : 240,
+    minPeople : 1,
+    maxPeople : 4,
+    minNight : 2,
+    maxNight : 15,
+    type : "House",
+    bed : 2,
+    bath : 2,
+    sleeps : 4,
+    food1 : "Kitchen Facilities including Coffee/Tea Facilities",
+    food2 : "Shores Restaurant (2 min drive)",
+    food3 : "5 min drive to City Center",
+    food4 : "",
+    para : "Enjoy the fabulous views of the lake and mountains situated in gorgeous Queenstown. This home is a 5 minute drive or 30 min walk from the city centre and is close to all major attractions including wineries, hiking and ski fields.",
+  }
+];
 
+// GLOBAL VARIABLES
+var totalNight;
+var adultNumber = 1;
+var childNumber = 0;
+var id = 101;
+
+
+// CHECK IN
 $("#startDate").datepicker({
   dateFormat: 'yy-mm-dd',
   changeMonth: true,
@@ -24,6 +118,7 @@ $("#startDate").datepicker({
 });
 
 
+// CHECK OUT
 $("#endDate").datepicker({
   dateFormat: 'yy-mm-dd',
   changeMonth: true,
@@ -33,16 +128,17 @@ $("#endDate").datepicker({
     var end = $('#endDate').datepicker('getDate');
     var days   = (end - start)/1000/60/60/24;
     console.log(days);
+    totalNight = days;
     return;
   }
 
 });
 
-var adultNumber = 1;
-var childNumber = 0;
+
 
 $("#adultMinus").hide();
 $("#childMinus").hide();
+
 
 // ADULT GUEST FUNCTION
 document.getElementById('adult').innerText = adultNumber;
@@ -79,7 +175,7 @@ $("#adultMinus").click(function(){
 });
 
 
-// child GUEST FUNCTION
+// CHILD GUEST FUNCTION
 document.getElementById('child').innerText = childNumber;
 
 $("#childPlus").click(function(){
@@ -116,14 +212,41 @@ $("#childMinus").click(function(){
 });
 
 
+// FUNCTION TO DISPLAY RESULTS CARD
+function displayCard(i) {
+  priceTotal = (accom[i].pricePerNight * totalNight)
+  document.getElementById('cardContainer').innerHTML +=
+  '<div class="card" style="width: 18rem;">' +
+    '<img id="a' + id.toString() +'" src="' + accom[i].photo1 + '" class="card-img-top" alt="">' +
+    '<div class="card-body">' +
+      '<p class="card-text cardDetails">' +
+        accom[i].name +
+        '<br>' +
+        accom[i].type + ' | <img src="images/icons/bed.svg" alt=""> ' + accom[i].bed + ' | <img src="images/icons/bath.svg" alt=""> ' + accom[i].bath +
+      '</p>' +
+      '<p class="card-text cardPrice">' +
+        '<br>' +
+        '$' + accom[i].pricePerNight + '/night' +
+        '<br>' +
+        '$' + priceTotal + ' in total' +
+      '</p>' +
+    '</div>' +
+  '</div>'
+};
 
 
-//Find the number of days between dates
-// function dateDiff() {
-//
-//   var start = $('#startDate').datepicker('getDate');
-//   var end = $('#endDate').datepicker('getDate');
-//   var days   = (end - start)/1000/60/60/24;
-//   console.log(days);
-//   return;
-// }
+// SUBMIT BUTTON
+$('#submit').click(function(){
+
+  document.getElementById('cardContainer').innerHTML = "";
+  var totalPeople = (adultNumber + childNumber);
+  console.log(totalPeople);
+  id=101;
+  for (var i=0; i<accom.length; i++){
+    if (((totalNight >= accom[i].minNight) && (totalNight <= accom[i].maxNight)) && ((totalPeople >= accom[i].minPeople)) && ((totalPeople <= accom[i].maxPeople))){
+      displayCard(i);
+    }
+    id++;
+  }
+
+});
