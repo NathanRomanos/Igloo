@@ -28,7 +28,7 @@
     <div class="landingPage">
 
   <!-- LANDING PAGE HEADER -->
-      <div class="header">
+      <div class="header" onclick="">
         <img class="headerImg" src="images/IglooBanner@2x.png" alt="">
         <img class="headerLogo" src="images/IglooLogo2@2x.png" alt="">
         <span class="headerShadow"></span>
@@ -46,9 +46,9 @@
 
         <label for="endDate" class="black searchBox-label"> Check Out </label>
 
-        <input type="text" id="startDate" class="searchBox-date" name="startDate">
+        <input type="text" id="startDate" class="searchBox-date" name="startDate" autocomplete="off">
 
-        <input type="text" id="endDate" class="searchBox-date" name="endDate">
+        <input type="text" id="endDate" class="searchBox-date" name="endDate" autocomplete="off">
 
         <!-- FLEXBOX DIVIDING SPACE -->
         <div class="Searchbox-space"></div>
@@ -121,10 +121,7 @@
 
           <!-- Swiper -->
           <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div id="slide1" class="swiper-slide"> <img src="images/hotelMain2.jpg" alt=""> </div>
-              <div id="slide2" class="swiper-slide">Slide 2</div>
-              <div id="slide3" class="swiper-slide">Slide 3</div>
+            <div id="slides" class="swiper-wrapper">
             </div>
             <!-- Add Arrows -->
             <div class="swiper-button-next"></div>
@@ -136,24 +133,46 @@
             Hotel Trivago
           </div>
 
-          <!-- Details -->
-          <div id="modalDetails" class="modalDetails">
+          <!-- Paragraph -->
+          <div id="modalPara" class="modalPara">
             Spectacularly situated on Lake Wakatipu, Matakauri Lodge offers stunning views from every angle of the Remarkable, Cecil and Walter Peak mountain ranges. Just seven minutes from Queenstown, Matakauri Lodge provides an alpine lakeside retreat amongst one of the world’s most serenely beautiful landscapes.
           </div>
 
           <!-- Food -->
           <div id="modalFood" class="modalFood">
-            food1 : "Room Service",
+            <h3>We provide:</h3>
+            <img src="images/icons/kitchen.svg" alt=""> Room service
             <br>
-            food2 : "On-site Restaurant",
+            <img src="images/icons/restaurant.svg" alt=""> On-site restaurant
             <br>
-            food3 : "On-site Bar/Lounge",
+            <img src="images/icons/bar.svg" alt=""> On-site bar/Lounge
             <br>
-            food4 : "Coffee/Tea Facilities",
-            <br>
+            <img src="images/icons/coffee.svg" alt=""> Coffee/Tea facilities
           </div>
 
-        </div>
+          <!-- Details -->
+          <div id="modalDetails" class="modalDetails">
+            Hotel
+            <br>
+            beds
+            <br>
+            bath
+            <br>
+            sleeps
+            <br>
+            <br>
+            <br>
+            $ pernight
+            <br>
+            $ total
+          </div>
+
+          <!-- Book -->
+          <div class="modalBook">
+            <a href=""><input type="button" name="submit" class="btn btn-lg btn-dark"  id="modalBook" value="Book"></a>
+          </div>
+
+        </div> <!-- modal ends here -->
 
       </div>
 
@@ -166,7 +185,7 @@
     </div> <!-- results container ends here -->
 
 
-    https://developers.google.com/maps/documentation/javascript/events?hl=en_US
+
 
 
 
@@ -194,7 +213,7 @@
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
     <!-- Map File -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUXMR59rISxU-mg0vOHpafkR9LgSFiZm4&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUXMR59rISxU-mg0vOHpafkR9LgSFiZm4"></script>
 
     <!-- My JS Script File -->
     <script type="text/javascript" src="js/script.js"></script>

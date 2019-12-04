@@ -5,6 +5,9 @@
   top: 2.5%;
   left: 2.5%;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
+  display: none;
+  z-index: 50;
+  background-color: white;
 
   .modalClose {
     position: absolute;
@@ -25,10 +28,8 @@
     font-size: 2rem;
   }
 
-  .modalDetails {
-    float: left;
-    width: 45%;
-    height: 50%;
+  .modalPara {
+    width: 95%;
     margin: 2.5%;
     // border: 1px solid red;
     line-height: normal;
@@ -37,9 +38,33 @@
   .modalFood {
     float: left;
     width: 45%;
-    height: 50%;
+    height: 35%;
     margin: 2.5%;
-    border: 1px solid red;
+    // border: 1px solid red;
+    line-height: 2em;
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    img {
+      height: 1.2em;
+    }
+
+  }
+
+  .modalDetails {
+    float: left;
+    width: 45%;
+    margin: 2.5%;
+    // border: 1px solid red;
+    text-align: right;
+  }
+
+  .modalBook {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
   }
 
 }

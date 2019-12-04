@@ -18,10 +18,14 @@ var accom = [
     bed : 1,
     bath : 1,
     sleeps : 2,
-    food1 : "Room Service",
-    food2 : "On-site Restaurant",
-    food3 : "On-site Bar/Lounge",
-    food4 : "Coffee/Tea Facilities",
+    food : '<h3>We provide:</h3>' +
+          '<img src="images/icons/kitchen.svg" alt=""> Room service' +
+          '<br>' +
+          '<img src="images/icons/restaurant.svg" alt=""> On-site restaurant' +
+          '<br>' +
+          '<img src="images/icons/bar.svg" alt=""> On-site bar/Lounge' +
+          '<br>' +
+          '<img src="images/icons/coffee.svg" alt=""> Coffee/Tea facilities',
     para : "Spectacularly situated on Lake Wakatipu, Matakauri Lodge offers stunning views from every angle of the Remarkable, Cecil and Walter Peak mountain ranges. Just seven minutes from Queenstown, Matakauri Lodge provides an alpine lakeside retreat amongst one of the world’s most serenely beautiful landscapes.",
   },
   {
@@ -40,10 +44,13 @@ var accom = [
     bed : 1,
     bath : 1,
     sleeps : 1,
-    food1 : "On-site Bar",
-    food2 : "Complimentary Tea/Coffee, and Toast each morning",
-    food3 : "Numerous restaurants and cafés nearby",
-    food4 : "",
+    food : '<h3>We provide:</h3>' +
+            '<img src="images/icons/bar.svg" alt=""> On-site bar/Lounge' +
+            '<br>' +
+            '<img src="images/icons/coffee.svg" alt=""> Complimentary Tea/Coffee, and Toast each morning' +
+            '<br>' +
+            '<h3>Alternatively:</h3>' +
+            '<img src="images/icons/restaurant.svg" alt=""> Numerous restaurants and cafés nearby',
     para : "Designed for all budget travellers, this purpose built backpackers hostel has a variety of room types from small and large dorms, with or without en suites, to private en suite rooms with wide-screen cable TV.",
   },
   {
@@ -62,10 +69,13 @@ var accom = [
     bed : 2,
     bath : 1,
     sleeps : 4,
-    food1 : "Each room contains a kitchenette",
-    food2 : "Several restaurants within walking distance",
-    food3 : "Several cafés nearby",
-    food4 : "",
+    food : '<h3>We provide:</h3>' +
+            '<img src="images/icons/oven.svg" alt=""> Each room contains a kitchenette' +
+            '<br>' +
+            '<h3>Alternatively:</h3>' +
+            '<img src="images/icons/restaurant.svg" alt=""> Several restaurants within walking distance' +
+            '<br>' +
+            '<img src="images/icons/coffee.svg" alt=""> Several cafés nearby',
     para : "Just 5 minutes’ walk from Lake Wakatipu, Autoline Queenstown Motel offers self-contained accommodation with a spa bath or a private balcony with mountain views. Guests enjoy free WiFi.",
   },
   {
@@ -84,10 +94,15 @@ var accom = [
     bed : 2,
     bath : 2,
     sleeps : 4,
-    food1 : "Kitchen Facilities including Coffee/Tea Facilities",
-    food2 : "Shores Restaurant (2 min drive)",
-    food3 : "5 min drive to City Center",
-    food4 : "",
+    food1 : '<h3>We provide:</h3>' +
+            '<img src="images/icons/oven.svg" alt=""> Kitchenette' +
+            '<br>' +
+            '<img src="images/icons/coffee.svg" alt=""> Coffee/Tea facilities' +
+            '<br>' +
+            '<h3>Alternatively:</h3>' +
+            '<img src="images/icons/restaurant.svg" alt=""> Shores Restaurant (2 min drive)' +
+            '<br>' +
+            '<img src="images/icons/car.svg" alt=""> 5 min drive to city center',
     para : "Enjoy the fabulous views of the lake and mountains situated in gorgeous Queenstown. This home is a 5 minute drive or 30 min walk from the city centre and is close to all major attractions including wineries, hiking and ski fields.",
   }
 ];
@@ -223,7 +238,7 @@ $("#childMinus").click(function(){
 function displayCard(i) {
   priceTotal = (accom[i].pricePerNight * totalNight)
   document.getElementById('cardContainer').innerHTML +=
-  '<div class="card" style="width: 18rem;">' +
+  '<div id= class="card" style="width: 18rem;">' +
     '<img id="a' + id.toString() +'" src="' + accom[i].photo1 + '" class="card-img-top" alt="">' +
     '<div class="card-body">' +
       '<p class="card-text cardDetails">' +
@@ -241,6 +256,27 @@ function displayCard(i) {
   '</div>'
 };
 
+
+// FUNCTION TO DISPLAY MODAL
+function displayModal() {
+  $('.card-img-top').on('click', function(){
+    console.log(this.id);
+    $('.myModal').show();
+    for (var i = 0; i < accom.length; i++){
+      if (accom[i].id.trim() == this.id.trim()){
+        document.getElementById('slides').innerHTML =
+          '<div id="slide1" class="swiper-slide"><img src="' + accom[i].photo1 + '" alt=""></div>' +
+          '<div id="slide2" class="swiper-slide"><img src="' + accom[i].photo2 + '" alt=""></div>' +
+          '<div id="slide3" class="swiper-slide"><img src="' + accom[i].photo3 + '" alt=""></div>';
+      }
+    }
+    $('.modalClose').on('click', function(){
+      $('.myModal').hide();
+    });
+  });
+}
+
+
 // SUBMIT BUTTON
 $('#submit').click(function(){
 
@@ -254,18 +290,17 @@ $('#submit').click(function(){
     if (((totalNight >= accom[i].minNight) && (totalNight <= accom[i].maxNight)) && ((totalPeople >= accom[i].minPeople)) && ((totalPeople <= accom[i].maxPeople))){
       markerArray.push(accom[i].latlng);
       displayCard(i);
+      displayModal();
     }
     id++;
   }
-  // initMap();
+  initMap();
   console.log(markerArray);
-
-  var swiper = new Swiper('.swiper-container', {
+  var mySwiper = new Swiper('.swiper-container', {
         loop: true,
-        effect: 'fade',
         autoplay: {
         delay: 4500,
-        disableOnInteraction: true,
+        disableOnInteraction: false,
       },
         navigation: {
           nextEl: '.swiper-button-next',

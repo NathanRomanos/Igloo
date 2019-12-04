@@ -135,7 +135,10 @@ nav {
   height: 95%;
   top: 2.5%;
   left: 2.5%;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8); }
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
+  display: none;
+  z-index: 50;
+  background-color: white; }
   .myModal .modalClose {
     position: absolute;
     top: 0px;
@@ -151,18 +154,29 @@ nav {
     z-index: 100;
     text-align: center;
     font-size: 2rem; }
-  .myModal .modalDetails {
-    float: left;
-    width: 45%;
-    height: 50%;
+  .myModal .modalPara {
+    width: 95%;
     margin: 2.5%;
     line-height: normal; }
   .myModal .modalFood {
     float: left;
     width: 45%;
-    height: 50%;
+    height: 35%;
     margin: 2.5%;
-    border: 1px solid red; }
+    line-height: 2em; }
+    .myModal .modalFood h3 {
+      font-size: 1.2em; }
+    .myModal .modalFood img {
+      height: 1.2em; }
+  .myModal .modalDetails {
+    float: left;
+    width: 45%;
+    margin: 2.5%;
+    text-align: right; }
+  .myModal .modalBook {
+    position: absolute;
+    bottom: 10px;
+    left: 10px; }
 
 .swiper-container {
   width: 95%;
