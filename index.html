@@ -15,6 +15,9 @@
     <!-- jQuery UI Stylesheet -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+    <!-- Swiper Stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
     <!-- My CSS File -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -71,7 +74,7 @@
         <div class="Searchbox-space"></div>
 
         <!-- SEARCHBOX SEARCH BUTTON -->
-        <input type="button" name="submit" class="btn btn-lg btn-dark"  id="submit" value="Submit">
+        <a href="#resultsNav"><input type="button" name="submit" class="btn btn-lg btn-dark"  id="submit" value="Submit"></a>
 
       </div> <!-- SearchBox ends here -->
 
@@ -86,10 +89,10 @@
 
 
 <!-- RESULTS CONTAINER -->
-    <div class="resultsPageContainer">
+    <div id="resultsPageContainer" class="resultsPageContainer">
 
 <!-- RESULTS CONTAINER NAV BAR -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav id="resultsNav" class="navbar navbar-expand-lg navbar-dark bg-dark">
         <img class="navbar-brand" src="images/iglooLogo2@2x.png"></img>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -107,33 +110,57 @@
 
 <!-- RESULTS -->
       <div class="resultsContainer">
-        <div id="cardContainer" class="row justify-content-around align-items-center">
 
-        <!-- <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="images/houseMain.jpg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text cardDetails">
-              Matakauri Lodge
-              <br>
-              House | <img src="images/icons/bed.svg" alt=""> 2 | <img src="images/icons/bath.svg" alt=""> 2
-            </p>
-            <p class="card-text cardPrice">
-              <br>
-              $240/night
-              <br>
-              $680
-            </p>
+        <div id="cardContainer" class="row justify-content-around align-items-center"></div>
+
+        <!-- MODAL -->
+        <div id="myModal" class="myModal">
+
+          <!-- Close button -->
+          <div id="modalClose" class="modalClose">&times</div>
+
+          <!-- Swiper -->
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div id="slide1" class="swiper-slide"> <img src="images/hotelMain2.jpg" alt=""> </div>
+              <div id="slide2" class="swiper-slide">Slide 2</div>
+              <div id="slide3" class="swiper-slide">Slide 3</div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
-        </div> -->
 
-      </div> <!-- Card container ends here -->
+          <!-- Name -->
+          <div id="modalName" class="modalName">
+            Hotel Trivago
+          </div>
+
+          <!-- Details -->
+          <div id="modalDetails" class="modalDetails">
+            Spectacularly situated on Lake Wakatipu, Matakauri Lodge offers stunning views from every angle of the Remarkable, Cecil and Walter Peak mountain ranges. Just seven minutes from Queenstown, Matakauri Lodge provides an alpine lakeside retreat amongst one of the world’s most serenely beautiful landscapes.
+          </div>
+
+          <!-- Food -->
+          <div id="modalFood" class="modalFood">
+            food1 : "Room Service",
+            <br>
+            food2 : "On-site Restaurant",
+            <br>
+            food3 : "On-site Bar/Lounge",
+            <br>
+            food4 : "Coffee/Tea Facilities",
+            <br>
+          </div>
+
+        </div>
 
       </div>
 
 
 <!-- MAP -->
       <div class="mapContainer">
-
+        <div id="map"> Map goes here </div>
       </div>
 
     </div> <!-- results container ends here -->
@@ -159,6 +186,12 @@
 
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+    <!-- Map File -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUXMR59rISxU-mg0vOHpafkR9LgSFiZm4&callback=initMap" async defer></script>
 
     <!-- My JS Script File -->
     <script type="text/javascript" src="js/script.js"></script>

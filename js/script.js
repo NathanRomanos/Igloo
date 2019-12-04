@@ -13,6 +13,7 @@ var accom = [
     maxPeople : 2,
     minNight : 1,
     maxNight : 5,
+    latlng: {lat: -45.059, lng: 168.585,},
     type : "Hotel",
     bed : 1,
     bath : 1,
@@ -34,6 +35,7 @@ var accom = [
     maxPeople : 1,
     minNight : 1,
     maxNight : 10,
+    latlng: {lat: -45.032, lng: 168.659,},
     type : "Hostel",
     bed : 1,
     bath : 1,
@@ -56,6 +58,7 @@ var accom = [
     minNight : 3,
     maxNight : 10,
     type : "Motel",
+    latlng: {lat: -45.033, lng: 168.666,},
     bed : 2,
     bath : 1,
     sleeps : 4,
@@ -77,6 +80,7 @@ var accom = [
     minNight : 2,
     maxNight : 15,
     type : "House",
+    latlng: {lat: -45.028, lng: 168.681,},
     bed : 2,
     bath : 2,
     sleeps : 4,
@@ -88,12 +92,20 @@ var accom = [
   }
 ];
 
+console.log(accom);
+
 // GLOBAL VARIABLES
 var totalNight;
 var adultNumber = 1;
 var childNumber = 0;
 var id = 101;
+var markerArray = [];
 
+
+// HIDDEN ITEMS
+$("#adultMinus").hide();
+$("#childMinus").hide();
+$("#resultsPageContainer").hide();
 
 // CHECK IN
 $("#startDate").datepicker({
@@ -133,11 +145,6 @@ $("#endDate").datepicker({
   }
 
 });
-
-
-
-$("#adultMinus").hide();
-$("#childMinus").hide();
 
 
 // ADULT GUEST FUNCTION
@@ -234,9 +241,10 @@ function displayCard(i) {
   '</div>'
 };
 
-
 // SUBMIT BUTTON
 $('#submit').click(function(){
+
+  $("#resultsPageContainer").show();
 
   document.getElementById('cardContainer').innerHTML = "";
   var totalPeople = (adultNumber + childNumber);
@@ -244,9 +252,39 @@ $('#submit').click(function(){
   id=101;
   for (var i=0; i<accom.length; i++){
     if (((totalNight >= accom[i].minNight) && (totalNight <= accom[i].maxNight)) && ((totalPeople >= accom[i].minPeople)) && ((totalPeople <= accom[i].maxPeople))){
+      markerArray.push(accom[i].latlng);
       displayCard(i);
     }
     id++;
   }
+  // initMap();
+  console.log(markerArray);
 
+  var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        effect: 'fade',
+        autoplay: {
+        delay: 4500,
+        disableOnInteraction: true,
+      },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
 });
+
+
+// MAP FUNCTIONALITY
+function initMap() {
+
+  var queenstown = {lat: -45.024, lng: 168.656};
+
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 11, center: queenstown});
+
+  for (var i = 0; i < markerArray.length; i++) {
+    var marker = new google.maps.Marker({position: markerArray[i], map: map});
+  };
+
+}

@@ -11,7 +11,6 @@ nav {
   width: 250px;
 }
 
-
 .resultsContainer {
   float: left;
   width: 50%;
@@ -21,17 +20,8 @@ nav {
   display: flex;
 }
 
-.mapContainer {
-  float: right;
-  width: 50%;
-  height: 90vh;
-  border: 3px solid yellow;
-  margin: 0;
-}
-
 .card-img-top {
   border-bottom: 3px solid black;
-  overflow: hidden;
 }
 
 .cardDetails {
@@ -56,4 +46,18 @@ nav {
 
 .card-body {
   padding: 0;
+}
+
+// MAP CONTAINER
+.mapContainer {
+  float: right;
+  width: 50%;
+  height: 90vh;
+  margin: 0;
+}
+
+#map{
+  width: 95%;
+  height: 95%;
+  margin: 2.5%;
 }

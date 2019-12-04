@@ -1,0 +1,73 @@
+.myModal {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  top: 2.5%;
+  left: 2.5%;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
+
+  .modalClose {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    font-size: 3rem;
+    line-height: 50%;
+    z-index: 100;
+  }
+
+  .modalName {
+    width: 100%;
+    position: absolute;
+    top: 32%;
+    z-index: 100;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .modalDetails {
+    float: left;
+    width: 45%;
+    height: 50%;
+    margin: 2.5%;
+    // border: 1px solid red;
+    line-height: normal;
+  }
+
+  .modalFood {
+    float: left;
+    width: 45%;
+    height: 50%;
+    margin: 2.5%;
+    border: 1px solid red;
+  }
+
+}
+
+
+
+
+// SWIPER
+.swiper-container {
+      width: 95%;
+      height: 35%;
+      margin-top: 2.5%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
