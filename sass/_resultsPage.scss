@@ -93,3 +93,39 @@ nav {
   height: 95%;
   margin: 2.5%;
 }
+
+
+
+@media only screen and (max-width: 450px) {
+
+  nav {
+    height: 10vh;
+  }
+
+  .navbar-brand {
+    width: unset;
+    height: 9vh;
+  }
+
+  .mapContainer {
+    width: 100%;
+    height: 40vh;
+    margin: 0;
+  }
+
+  #map{
+    width: 95%;
+    height: 95%;
+    margin: 2.5%;
+  }
+
+  .resultsContainer {
+    width: 100%;
+    height: 40vh;
+    margin: 0;
+    position: fixed;
+    left: 0;
+    top: 60%;
+    display: flex;
+  }
+}

@@ -107,3 +107,87 @@
       -webkit-align-items: center;
       align-items: center;
     }
+
+
+
+@media only screen and (max-width: 450px) {
+  .myModal {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    top: -40%;
+    left: 2.5%;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 50;
+    background-color: white;
+
+    .modalClose {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      cursor: pointer;
+      font-size: 3rem;
+      line-height: 50%;
+      z-index: 100;
+    }
+
+    .modalName {
+      width: 100%;
+      position: absolute;
+      top: 32%;
+      z-index: 100;
+
+      h3{
+        text-align: center;
+        font-size: 2rem;
+        color: white;
+      }
+    }
+
+    .modalPara {
+      width: 95%;
+      margin: 2.5%;
+      // border: 1px solid red;
+      line-height: normal;
+    }
+
+    .modalFood {
+      float: left;
+      width: 65%;
+      height: 35%;
+      margin: 2.5%;
+      // border: 1px solid red;
+      line-height: 2em;
+
+      h3 {
+        font-size: 1.2em;
+      }
+
+      img {
+        height: 1.2em;
+      }
+
+    }
+
+    .modalDetails {
+      float: left;
+      width: 25%;
+      margin: 2.5%;
+      // border: 1px solid red;
+      text-align: right;
+
+      img {
+        height: 1.2em;
+      }
+
+    }
+
+    .modalBook {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+    }
+
+  }
+}
