@@ -16,9 +16,29 @@ nav {
   width: 50%;
   height: 90vh;
   margin: 0;
-  position: relative;
+  position: fixed;
+  left: 0;
   display: flex;
 }
+
+#cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#resultsSwiper {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      font-size: 18px;
+      height: auto;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 30px;
+    }
 
 .card-img-top {
   border-bottom: 3px solid black;
@@ -35,22 +55,34 @@ nav {
 
 .cardPrice {
   text-align: right;
+  margin-right: 10px;
 }
 
 .card {
   background-color: unset;
   border: unset;
   width: 34% !important;
+  cursor: pointer;
+  margin: 2.5% 0;
+}
 
+.card:hover{
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
 }
 
 .card-body {
   padding: 0;
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
 }
 
 // MAP CONTAINER
 .mapContainer {
-  float: right;
+  position: fixed;
+  right: 0;
   width: 50%;
   height: 90vh;
   margin: 0;

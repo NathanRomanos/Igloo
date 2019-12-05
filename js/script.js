@@ -5,7 +5,7 @@ var accom = [
   {
     name : "Matakauri Lodge",
     id : "a101",
-    photo1 : "images/hotelMain2.jpg",
+    photo1 : "images/hotelMain.jpg",
     photo2 : "images/hotel2.jpg",
     photo3 : "images/hotel3.jpg",
     pricePerNight : 157,
@@ -17,7 +17,6 @@ var accom = [
     type : "Hotel",
     bed : 1,
     bath : 1,
-    sleeps : 2,
     food : '<h3>We provide:</h3>' +
           '<img src="images/icons/kitchen.svg" alt=""> Room service' +
           '<br>' +
@@ -29,7 +28,7 @@ var accom = [
     para : "Spectacularly situated on Lake Wakatipu, Matakauri Lodge offers stunning views from every angle of the Remarkable, Cecil and Walter Peak mountain ranges. Just seven minutes from Queenstown, Matakauri Lodge provides an alpine lakeside retreat amongst one of the world’s most serenely beautiful landscapes.",
   },
   {
-    name : "Nomads Queenstown Backpackers",
+    name : "Nomads Backpackers",
     id : "a102",
     photo1 : "images/hostelMain.jpg",
     photo2 : "images/hostel2.jpg",
@@ -43,11 +42,11 @@ var accom = [
     type : "Hostel",
     bed : 1,
     bath : 1,
-    sleeps : 1,
     food : '<h3>We provide:</h3>' +
             '<img src="images/icons/bar.svg" alt=""> On-site bar/Lounge' +
             '<br>' +
             '<img src="images/icons/coffee.svg" alt=""> Complimentary Tea/Coffee, and Toast each morning' +
+            '<br>' +
             '<br>' +
             '<h3>Alternatively:</h3>' +
             '<img src="images/icons/restaurant.svg" alt=""> Numerous restaurants and cafés nearby',
@@ -68,9 +67,9 @@ var accom = [
     latlng: {lat: -45.033, lng: 168.666,},
     bed : 2,
     bath : 1,
-    sleeps : 4,
     food : '<h3>We provide:</h3>' +
             '<img src="images/icons/oven.svg" alt=""> Each room contains a kitchenette' +
+            '<br>' +
             '<br>' +
             '<h3>Alternatively:</h3>' +
             '<img src="images/icons/restaurant.svg" alt=""> Several restaurants within walking distance' +
@@ -93,18 +92,118 @@ var accom = [
     latlng: {lat: -45.028, lng: 168.681,},
     bed : 2,
     bath : 2,
-    sleeps : 4,
-    food1 : '<h3>We provide:</h3>' +
+    food : '<h3>We provide:</h3>' +
             '<img src="images/icons/oven.svg" alt=""> Kitchenette' +
             '<br>' +
             '<img src="images/icons/coffee.svg" alt=""> Coffee/Tea facilities' +
+            '<br>' +
             '<br>' +
             '<h3>Alternatively:</h3>' +
             '<img src="images/icons/restaurant.svg" alt=""> Shores Restaurant (2 min drive)' +
             '<br>' +
             '<img src="images/icons/car.svg" alt=""> 5 min drive to city center',
     para : "Enjoy the fabulous views of the lake and mountains situated in gorgeous Queenstown. This home is a 5 minute drive or 30 min walk from the city centre and is close to all major attractions including wineries, hiking and ski fields.",
-  }
+  },
+  {
+    name : "2/42 Queenstown Hill",
+    id : "a105",
+    photo1 : "images/houseTwoMain.jpg",
+    photo2 : "images/houseTwo2.jpg",
+    photo3 : "images/houseTwo3.jpg",
+    pricePerNight : 240,
+    minPeople : 1,
+    maxPeople : 4,
+    minNight : 2,
+    maxNight : 15,
+    type : "House",
+    latlng: {lat: -45.026, lng: 168.683,},
+    bed : 3,
+    bath : 3,
+    food : '<h3>We provide:</h3>' +
+            '<img src="images/icons/oven.svg" alt=""> Full Kitchen' +
+            '<br>' +
+            '<img src="images/icons/kitchen.svg" alt=""> $10 Breakfast' +
+            '<br>' +
+            '<br>' +
+            '<h3>Alternatively:</h3>' +
+            '<img src="images/icons/restaurant.svg" alt=""> True South Dining Room (3 min drive)' +
+            '<br>' +
+            '<img src="images/icons/car.svg" alt=""> 7 min drive to city center',
+    para : "Enjoy this fully furnished executive home in Queenstown Hill with 180 degree views of Lake Wakatipu and The Remarkables.",
+  },
+  {
+    name : "6 Reading Court, Jacks Point",
+    id : "a106",
+    photo1 : "images/houseThreeMain.jpg",
+    photo2 : "images/houseThree2.jpg",
+    photo3 : "images/houseThree3.jpg",
+    pricePerNight : 240,
+    minPeople : 1,
+    maxPeople : 4,
+    minNight : 2,
+    maxNight : 15,
+    type : "House",
+    latlng: {lat: -45.075, lng: 168.743,},
+    bed : 2,
+    bath : 1,
+    food : '<h3>We provide:</h3>' +
+            '<img src="images/icons/oven.svg" alt=""> Full Kitchen' +
+            '<br>' +
+            '<br>' +
+            '<h3>Alternatively:</h3>' +
+            '<img src="images/icons/restaurant.svg" alt=""> Jacks Point Clubhouse (2 min drive)' +
+            '<br>' +
+            '<img src="images/icons/car.svg" alt=""> 16 min drive to Queenstown city centre',
+    para : "This Queenstown paradise, is a modern cedar home, set in stunning scenery, opening on to the reserve thru a rustic gate. Fully fenced & surrounded by dry stone walls, has easy maintenance section.",
+  },
+  {
+    name : "Hotel St Moritz",
+    id : "a107",
+    photo1 : "images/hotelTwoMain.jpg",
+    photo2 : "images/hotelTwo2.jpg",
+    photo3 : "images/hotelTwo3.jpg",
+    pricePerNight : 157,
+    minPeople : 1,
+    maxPeople : 2,
+    minNight : 1,
+    maxNight : 5,
+    latlng: {lat: -45.034, lng: 168.651,},
+    type : "Hotel",
+    bed : 1,
+    bath : 1,
+    food : '<h3>We provide:</h3>' +
+          '<img src="images/icons/kitchen.svg" alt=""> Breakfast to your room' +
+          '<br>' +
+          '<img src="images/icons/restaurant.svg" alt=""> On-site restaurant' +
+          '<br>' +
+          '<img src="images/icons/bar.svg" alt=""> On-site bar' +
+          '<br>' +
+          '<img src="images/icons/coffee.svg" alt=""> Coffee/Tea facilities',
+    para : "Idyllically situated in the heart of Queenstown and with wonderful views overlooking Lake Wakatipu to The Remarkables mountain range, Hotel St Moritz embodies the spirit of its location.",
+  },
+  {
+    name : "Four Seasons Motel",
+    id : "a108",
+    photo1 : "images/motelTwoMain.jpg",
+    photo2 : "images/motelTwo2.jpg",
+    photo3 : "images/motelTwo3.jpg",
+    pricePerNight : 90,
+    minPeople : 2,
+    maxPeople : 4,
+    minNight : 3,
+    maxNight : 10,
+    type : "Motel",
+    latlng: {lat: -45.032, lng: 168.662,},
+    bed : 2,
+    bath : 1,
+    food : '<h3>We provide:</h3>' +
+            '<img src="images/icons/oven.svg" alt=""> Full kitchen facilities' +
+            '<br>' +
+            '<br>' +
+            '<h3>Alternatively:</h3>' +
+            '<img src="images/icons/restaurant.svg" alt=""> Several restaurants and cafes within walking distance',
+    para : "Just 5 minutes’ walk from Lake Wakatipu, Autoline Queenstown Motel offers self-contained accommodation with a spa bath or a private balcony with mountain views. Guests enjoy free WiFi.",
+  },
 ];
 
 console.log(accom);
@@ -238,12 +337,11 @@ $("#childMinus").click(function(){
 function displayCard(i) {
   priceTotal = (accom[i].pricePerNight * totalNight)
   document.getElementById('cardContainer').innerHTML +=
-  '<div id= class="card" style="width: 18rem;">' +
-    '<img id="a' + id.toString() +'" src="' + accom[i].photo1 + '" class="card-img-top" alt="">' +
+  '<div id="a' + id.toString() +'" class="card" style="width: 18rem;">' +
+    '<img src="' + accom[i].photo1 + '" class="card-img-top" alt="">' +
     '<div class="card-body">' +
+      '<h3>' + accom[i].name + '</h3>' +
       '<p class="card-text cardDetails">' +
-        accom[i].name +
-        '<br>' +
         accom[i].type + ' | <img src="images/icons/bed.svg" alt=""> ' + accom[i].bed + ' | <img src="images/icons/bath.svg" alt=""> ' + accom[i].bath +
       '</p>' +
       '<p class="card-text cardPrice">' +
@@ -259,7 +357,7 @@ function displayCard(i) {
 
 // FUNCTION TO DISPLAY MODAL
 function displayModal() {
-  $('.card-img-top').on('click', function(){
+  $('.card').on('click', function(){
     console.log(this.id);
     $('.myModal').show();
     for (var i = 0; i < accom.length; i++){
@@ -268,6 +366,27 @@ function displayModal() {
           '<div id="slide1" class="swiper-slide"><img src="' + accom[i].photo1 + '" alt=""></div>' +
           '<div id="slide2" class="swiper-slide"><img src="' + accom[i].photo2 + '" alt=""></div>' +
           '<div id="slide3" class="swiper-slide"><img src="' + accom[i].photo3 + '" alt=""></div>';
+
+          document.getElementById('modalName').innerHTML = '<h3>' + accom[i].name + '</h3>';
+
+          document.getElementById('modalPara').innerHTML = accom[i].para;
+
+          document.getElementById('modalFood').innerHTML = accom[i].food;
+
+          document.getElementById('modalDetails').innerHTML =
+          accom[i].type +
+          '<br>' +
+          '<img src="images/icons/bed.svg" alt=""> ' + accom[i].bed +
+          '<br>' +
+          '<img src="images/icons/bath.svg" alt=""> ' + accom[i].bath +
+          '<br>' +
+          '<img src="images/icons/people.svg" alt=""> ' + accom[i].maxPeople +
+          '<br>' +
+          '<br>' +
+          '<br>' +
+          '$' + accom[i].pricePerNight + '/night' +
+        '<br>' +
+        '$' + priceTotal + ' in total'
       }
     }
     $('.modalClose').on('click', function(){
@@ -281,6 +400,7 @@ function displayModal() {
 $('#submit').click(function(){
 
   $("#resultsPageContainer").show();
+  $(".landingPage").hide(500);
 
   document.getElementById('cardContainer').innerHTML = "";
   var totalPeople = (adultNumber + childNumber);
@@ -296,18 +416,40 @@ $('#submit').click(function(){
   }
   initMap();
   console.log(markerArray);
-  var mySwiper = new Swiper('.swiper-container', {
-        loop: true,
-        autoplay: {
-        delay: 4500,
-        disableOnInteraction: false,
-      },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      });
+
 });
+
+
+$('#resultsLogo').click(function(){
+  $(".landingPage").show();
+  $("#resultsPageContainer").hide(500);
+
+})
+
+
+var mySwiper = new Swiper('#modalSwiper', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      slidesPerView: 1,
+       centeredSlides: true,
+      loop: true,
+      autoplay: {
+      delay: 4500,
+      disableOnInteraction: false,
+    },
+    });
+
+    var swiper = new Swiper('#resultsSwiper', {
+          direction: 'vertical',
+          slidesPerView: 'auto',
+          freeMode: true,
+          scrollbar: {
+            el: '.swiper-scrollbar',
+          },
+          mousewheel: true,
+        });
 
 
 // MAP FUNCTIONALITY

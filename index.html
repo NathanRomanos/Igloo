@@ -8,6 +8,7 @@
     <meta name="description" content="Igloo is a prototype accommodation website for Queenstown, New Zealand.">
     <meta name="keywords" content="Igloo, New Zealand, NZ, accommodation, Queenstown, ski, skiing, Tourism New Zealand, snow, Yoobee">
     <link rel="shortcut icon" href="" type="image/vnd.microsoft.icon">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -28,7 +29,7 @@
     <div class="landingPage">
 
   <!-- LANDING PAGE HEADER -->
-      <div class="header" onclick="">
+      <div id="top" class="header" onclick="">
         <img class="headerImg" src="images/IglooBanner@2x.png" alt="">
         <img class="headerLogo" src="images/IglooLogo2@2x.png" alt="">
         <span class="headerShadow"></span>
@@ -93,7 +94,7 @@
 
 <!-- RESULTS CONTAINER NAV BAR -->
       <nav id="resultsNav" class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <img class="navbar-brand" src="images/iglooLogo2@2x.png"></img>
+        <a href="#top"><img id="resultsLogo" class="navbar-brand" src="images/iglooLogo2@2x.png"></img></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -111,7 +112,16 @@
 <!-- RESULTS -->
       <div class="resultsContainer">
 
-        <div id="cardContainer" class="row justify-content-around align-items-center"></div>
+        <div id="resultsSwiper"  class="swiper-container">
+          <div class="swiper-wrapper">
+            <div id="cardContainer" class="swiper-slide">
+            </div>
+          </div>
+          <!-- Add Scroll Bar -->
+          <div class="swiper-scrollbar"></div>
+        </div>
+
+        <div  class=""></div>
 
         <!-- MODAL -->
         <div id="myModal" class="myModal">
@@ -120,7 +130,7 @@
           <div id="modalClose" class="modalClose">&times</div>
 
           <!-- Swiper -->
-          <div class="swiper-container">
+          <div id="modalSwiper" class="swiper-container">
             <div id="slides" class="swiper-wrapper">
             </div>
             <!-- Add Arrows -->
@@ -169,7 +179,7 @@
 
           <!-- Book -->
           <div class="modalBook">
-            <a href=""><input type="button" name="submit" class="btn btn-lg btn-dark"  id="modalBook" value="Book"></a>
+            <a><input type="button" name="submit" class="btn btn-lg btn-dark"  id="modalBook" value="Book Now"></a>
           </div>
 
         </div> <!-- modal ends here -->
@@ -214,6 +224,8 @@
 
     <!-- Map File -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUXMR59rISxU-mg0vOHpafkR9LgSFiZm4"></script>
+
+    <!-- API RESTRICTION KEY: __file_url__//Users/932400754/Desktop/* -->
 
     <!-- My JS Script File -->
     <script type="text/javascript" src="js/script.js"></script>
