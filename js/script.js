@@ -485,8 +485,23 @@ function initMap() {
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 12, center: queenstown});
 
+for (var j = 0; j < accom.length; j++) {
   for (var i = 0; i < markerArray.length; i++) {
     var marker = new google.maps.Marker({position: markerArray[i], map: map});
+
+    if (accom[j].latlng == markerArray[i]) {
+      console.log(accom[j].name);
+
+      marker.addListener('click', function(){
+        console.log(accom[j].name);
+
+      });
+    }
+
+
+    };
   };
+
+
 
 }
