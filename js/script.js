@@ -217,12 +217,12 @@ var markerArray = [];
 
 
 // HIDDEN ITEMS
-$("#adultMinus").hide();
-$("#childMinus").hide();
+$(".adultMinus").hide();
+$(".childMinus").hide();
 $("#resultsPageContainer").hide();
 
 // CHECK IN
-$("#startDate").datepicker({
+$(".startDate").datepicker({
   dateFormat: 'yy-mm-dd',
   changeMonth: true,
   minDate: new Date(),
@@ -234,24 +234,24 @@ $("#startDate").datepicker({
       var stDate = new Date(selectedDate.getTime() + msecsInADay);
 
      //Set Minimum Date of EndDatePicker After Selected Date of StartDatePicker
-      $("#endDate").datepicker( "option", "minDate", stDate );
+      $(".endDate").datepicker( "option", "minDate", stDate );
       var enDate = new Date(selectedDate.getTime() + 15 * msecsInADay);
 
 
-      $("#endDate").datepicker( "option", "maxDate", enDate );
+      $(".endDate").datepicker( "option", "maxDate", enDate );
 
   }
 });
 
 
 // CHECK OUT
-$("#endDate").datepicker({
+$(".endDate").datepicker({
   dateFormat: 'yy-mm-dd',
   changeMonth: true,
   onSelect: function dateDiff() {
 
-    var start = $('#startDate').datepicker('getDate');
-    var end = $('#endDate').datepicker('getDate');
+    var start = $('.startDate').datepicker('getDate');
+    var end = $('.endDate').datepicker('getDate');
     var days   = (end - start)/1000/60/60/24;
     console.log(days);
     totalNight = days;
@@ -262,49 +262,49 @@ $("#endDate").datepicker({
 
 
 // ADULT GUEST FUNCTION
-document.getElementById('adult').innerText = adultNumber;
+$(".adult").text(adultNumber);
 
-$("#adultPlus").click(function(){
-  $("#adultMinus").show();
+$(".adultPlus").click(function(){
+  $(".adultMinus").show();
 
   if (adultNumber === 3) {
-    $("#adultPlus").hide();
-    $("#childMinus").hide();
+    $(".adultPlus").hide();
+    $(".childMinus").hide();
     adultNumber = adultNumber+1;
     childNumber = 0;
   } else if (((adultNumber + childNumber) > 3) && (adultNumber < 4)) {
     childNumber = childNumber-1;
     adultNumber = adultNumber+1;
-    $("#childPlus").show();
+    $(".childPlus").show();
   } else if (adultNumber < 4) {
     adultNumber = adultNumber+1;
   };
-  document.getElementById('adult').innerText = adultNumber;
-  document.getElementById('child').innerText = childNumber;
+  $(".adult").text(adultNumber);
+  $(".child").text(childNumber);
 });
 
-$("#adultMinus").click(function(){
+$(".adultMinus").click(function(){
   if (adultNumber === 2) {
-    $("#adultMinus").hide();
+    $(".adultMinus").hide();
     adultNumber = adultNumber-1;
   } else if (adultNumber > 1) {
-    $("#adultPlus").show();
-    $("#childPlus").show();
+    $(".adultPlus").show();
+    $(".childPlus").show();
     adultNumber = adultNumber-1
   };
-  document.getElementById('adult').innerText = adultNumber;
+  $(".adult").text(adultNumber);
 });
 
 
 // CHILD GUEST FUNCTION
-document.getElementById('child').innerText = childNumber;
+$(".child").text(childNumber);
 
-$("#childPlus").click(function(){
-  $("#childMinus").show();
+$(".childPlus").click(function(){
+  $(".childMinus").show();
 
   if (childNumber === 2) {
-    $("#childPlus").hide();
-    $("#adultMinus").hide();
+    $(".childPlus").hide();
+    $(".adultMinus").hide();
     childNumber = childNumber+1;
     adultNumber = 1;
   } else if ((adultNumber === 1) && (childNumber === 3)){
@@ -312,24 +312,24 @@ $("#childPlus").click(function(){
   } else if (((adultNumber + childNumber) > 3) && (childNumber < 4)) {
     childNumber = childNumber+1;
     adultNumber = adultNumber-1;
-    $("#adultPlus").show();
+    $(".adultPlus").show();
   } else if (childNumber < 4) {
     childNumber = childNumber+1
   };
-  document.getElementById('child').innerText = childNumber;
-  document.getElementById('adult').innerText = adultNumber;
+  $(".child").text(childNumber);
+  $(".adult").text(adultNumber);
 });
 
-$("#childMinus").click(function(){
+$(".childMinus").click(function(){
   if (childNumber === 1) {
-    $("#childMinus").hide();
+    $(".childMinus").hide();
     childNumber = childNumber-1;
   } else if (childNumber > 0) {
-    $("#childPlus").show();
-    $("#adultPlus").show();
+    $(".childPlus").show();
+    $(".adultPlus").show();
     childNumber = childNumber-1
   };
-  document.getElementById('child').innerText = childNumber;
+  $(".child").text(childNumber);
 });
 
 
@@ -351,7 +351,18 @@ function displayCard(i) {
         '$' + priceTotal + ' in total' +
       '</p>' +
     '</div>' +
-  '</div>'
+  '</div>';
+  var swiper = document.querySelector('#resultsSwiper').swiper
+  swiper.update(swiper = new Swiper('#resultsSwiper', {
+    direction: 'vertical',
+    slidesPerView: 'auto',
+    freeMode: true,
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+    mousewheel: true,
+      })
+    );
 };
 
 
@@ -363,9 +374,9 @@ function displayModal() {
     for (var i = 0; i < accom.length; i++){
       if (accom[i].id.trim() == this.id.trim()){
         document.getElementById('slides').innerHTML =
-          '<div id="slide1" class="swiper-slide"><img src="' + accom[i].photo1 + '" alt=""></div>' +
-          '<div id="slide2" class="swiper-slide"><img src="' + accom[i].photo2 + '" alt=""></div>' +
-          '<div id="slide3" class="swiper-slide"><img src="' + accom[i].photo3 + '" alt=""></div>';
+          '<div id="slide1" class="swiper-slide"><img class= "swiperImg" src="' + accom[i].photo1 + '" alt=""></div>' +
+          '<div id="slide2" class="swiper-slide"><img class= "swiperImg" src="' + accom[i].photo2 + '" alt=""></div>' +
+          '<div id="slide3" class="swiper-slide"><img class= "swiperImg" src="' + accom[i].photo3 + '" alt=""></div>';
 
           document.getElementById('modalName').innerHTML = '<h3>' + accom[i].name + '</h3>';
 
@@ -388,10 +399,25 @@ function displayModal() {
         '<br>' +
         '$' + priceTotal + ' in total'
       }
+      var mySwiper = document.querySelector('#modalSwiper').swiper
+      mySwiper.update(mySwiper = new Swiper('#modalSwiper', {
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 1,
+            loop: true,
+            autoplay: {
+            delay: 4500,
+            disableOnInteraction: false,
+          },
+          })
+        );
     }
     $('.modalClose').on('click', function(){
       $('.myModal').hide();
     });
+
   });
 }
 
@@ -433,7 +459,6 @@ var mySwiper = new Swiper('#modalSwiper', {
         prevEl: '.swiper-button-prev',
       },
       slidesPerView: 1,
-       centeredSlides: true,
       loop: true,
       autoplay: {
       delay: 4500,
@@ -458,7 +483,7 @@ function initMap() {
   var queenstown = {lat: -45.024, lng: 168.656};
 
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 11, center: queenstown});
+      document.getElementById('map'), {zoom: 12, center: queenstown});
 
   for (var i = 0; i < markerArray.length; i++) {
     var marker = new google.maps.Marker({position: markerArray[i], map: map});

@@ -48,9 +48,9 @@
 
         <label for="endDate" class="black searchBox-label"> Check Out </label>
 
-        <input type="text" id="startDate" class="searchBox-date" name="startDate" autocomplete="off">
+        <input type="text" id="startDate" class="searchBox-date startDate" name="startDate" autocomplete="off">
 
-        <input type="text" id="endDate" class="searchBox-date" name="endDate" autocomplete="off">
+        <input type="text" id="endDate" class="searchBox-date endDate" name="endDate" autocomplete="off">
 
         <!-- FLEXBOX DIVIDING SPACE -->
         <div class="Searchbox-space"></div>
@@ -61,15 +61,15 @@
         <label for="child" class="black searchBox-label"> Children </label>
 
         <div class="searchBox-guests">
-          <img id="adultMinus" class="searchBox-left" src="images/icons/rightArrow.svg"></img>
-          <h2 id="adult"></h2>
-          <img id="adultPlus" class="searchBox-right" src="images/icons/rightArrow.svg"></img>
+          <img id="" class="searchBox-left adultMinus" src="images/icons/rightArrow.svg"></img>
+          <h2 class="adult"></h2>
+          <img id="" class="searchBox-right adultPlus" src="images/icons/rightArrow.svg"></img>
         </div>
 
         <div class="searchBox-guests">
-          <img id="childMinus" class="searchBox-left" src="images/icons/rightArrow.svg"></img>
-          <h2 id="child"></h2>
-          <img id="childPlus" class="searchBox-right" src="images/icons/rightArrow.svg"></img>
+          <img id="" class="searchBox-left childMinus" src="images/icons/rightArrow.svg"></img>
+          <h2 class="child"></h2>
+          <img id="" class="searchBox-right childPlus" src="images/icons/rightArrow.svg"></img>
         </div>
 
         <!-- FLEXBOX DIVIDING SPACE -->
@@ -101,14 +101,77 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Features</a>
-            <a class="nav-item nav-link" href="#">Pricing</a>
-            <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="nav-item nav-link"><input type="text" id="startDate" class="searchBox-date startDate" name="startDate" autocomplete="off"> <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link">  <input type="text" id="endDate" class="searchBox-date endDate" name="endDate" autocomplete="off"></a>
+            <a class="nav-item nav-link"><div class="searchBox-guests">
+              <img id="" class="searchBox-left adultMinus" src="images/icons/rightArrow.svg"></img>
+              <h2 class="adult"></h2>
+              <img id="" class="searchBox-right adultPlus" src="images/icons/rightArrow.svg"></img>
+            </div></a>
+            <a class="nav-item nav-link">Disabled</a>
           </div>
         </div>
       </nav> <!-- nav bar ends here -->
 
+      <!-- MODAL -->
+      <div id="myModal" class="myModal">
+
+        <!-- Close button -->
+        <div id="modalClose" class="modalClose">&times</div>
+
+        <!-- Swiper -->
+        <div id="modalSwiper" class="swiper-container">
+          <div id="slides" class="swiper-wrapper"></div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
+        <!-- Name -->
+        <div id="modalName" class="modalName">
+          Hotel Trivago
+        </div>
+
+        <!-- Paragraph -->
+        <div id="modalPara" class="modalPara">
+          Spectacularly situated on Lake Wakatipu, Matakauri Lodge offers stunning views from every angle of the Remarkable, Cecil and Walter Peak mountain ranges. Just seven minutes from Queenstown, Matakauri Lodge provides an alpine lakeside retreat amongst one of the world’s most serenely beautiful landscapes.
+        </div>
+
+        <!-- Food -->
+        <div id="modalFood" class="modalFood">
+          <h3>We provide:</h3>
+          <img src="images/icons/kitchen.svg" alt=""> Room service
+          <br>
+          <img src="images/icons/restaurant.svg" alt=""> On-site restaurant
+          <br>
+          <img src="images/icons/bar.svg" alt=""> On-site bar/Lounge
+          <br>
+          <img src="images/icons/coffee.svg" alt=""> Coffee/Tea facilities
+        </div>
+
+        <!-- Details -->
+        <div id="modalDetails" class="modalDetails">
+          Hotel
+          <br>
+          beds
+          <br>
+          bath
+          <br>
+          sleeps
+          <br>
+          <br>
+          <br>
+          $ pernight
+          <br>
+          $ total
+        </div>
+
+        <!-- Book -->
+        <div class="modalBook">
+          <a><input type="button" name="submit" class="btn btn-lg btn-dark"  id="modalBook" value="Book Now"></a>
+        </div>
+
+      </div> <!-- modal ends here -->
 
 <!-- RESULTS -->
       <div class="resultsContainer">
@@ -122,70 +185,7 @@
           <div class="swiper-scrollbar"></div>
         </div>
 
-        <div  class=""></div>
-
-        <!-- MODAL -->
-        <div id="myModal" class="myModal">
-
-          <!-- Close button -->
-          <div id="modalClose" class="modalClose">&times</div>
-
-          <!-- Swiper -->
-          <div id="modalSwiper" class="swiper-container">
-            <div id="slides" class="swiper-wrapper">
-            </div>
-            <!-- Add Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-          </div>
-
-          <!-- Name -->
-          <div id="modalName" class="modalName">
-            Hotel Trivago
-          </div>
-
-          <!-- Paragraph -->
-          <div id="modalPara" class="modalPara">
-            Spectacularly situated on Lake Wakatipu, Matakauri Lodge offers stunning views from every angle of the Remarkable, Cecil and Walter Peak mountain ranges. Just seven minutes from Queenstown, Matakauri Lodge provides an alpine lakeside retreat amongst one of the world’s most serenely beautiful landscapes.
-          </div>
-
-          <!-- Food -->
-          <div id="modalFood" class="modalFood">
-            <h3>We provide:</h3>
-            <img src="images/icons/kitchen.svg" alt=""> Room service
-            <br>
-            <img src="images/icons/restaurant.svg" alt=""> On-site restaurant
-            <br>
-            <img src="images/icons/bar.svg" alt=""> On-site bar/Lounge
-            <br>
-            <img src="images/icons/coffee.svg" alt=""> Coffee/Tea facilities
-          </div>
-
-          <!-- Details -->
-          <div id="modalDetails" class="modalDetails">
-            Hotel
-            <br>
-            beds
-            <br>
-            bath
-            <br>
-            sleeps
-            <br>
-            <br>
-            <br>
-            $ pernight
-            <br>
-            $ total
-          </div>
-
-          <!-- Book -->
-          <div class="modalBook">
-            <a><input type="button" name="submit" class="btn btn-lg btn-dark"  id="modalBook" value="Book Now"></a>
-          </div>
-
-        </div> <!-- modal ends here -->
-
-      </div>
+      </div> <!-- Results COntainer ends here -->
 
 
 <!-- MAP -->
