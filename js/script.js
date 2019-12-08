@@ -14,6 +14,7 @@ var accom = [
     minNight : 1,
     maxNight : 5,
     latlng: {lat: -45.059, lng: 168.585,},
+    link: "https://www.booking.com/hotel/nz/matakauri-lodge-queenstown.html",
     type : "Hotel",
     bed : 1,
     bath : 1,
@@ -39,6 +40,7 @@ var accom = [
     minNight : 1,
     maxNight : 10,
     latlng: {lat: -45.032, lng: 168.659,},
+    link: "https://nomadsworld.com/new-zealand/nomads-queenstown/",
     type : "Hostel",
     bed : 1,
     bath : 1,
@@ -65,6 +67,7 @@ var accom = [
     maxNight : 10,
     type : "Motel",
     latlng: {lat: -45.033, lng: 168.666,},
+    link: "https://www.booking.com/hotel/nz/autoline-queenstown-motel.en-gb.html?aid=339463;label=msn-%2ASDYZLcgJez8bfytVKkWvg-4204406398%3Atikwd-16530141601%3Aloc-134%3Anes%3Amte%3Adec%3Aqsautoline%20queenstown%20motel;sid=6c3367700d97d56f7292e2b6d778f90a;dest_id=900039039;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=1;hpos=1;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;srepoch=1575784544;srpvid=b5a129b0263c006a;type=total;ucfs=1&#hotelTmpl",
     bed : 2,
     bath : 1,
     food : '<h3>We provide:</h3>' +
@@ -90,6 +93,7 @@ var accom = [
     maxNight : 15,
     type : "House",
     latlng: {lat: -45.028, lng: 168.681,},
+    link: "https://amazingaccom.com/luxury-accommodation/new-zealand/queenstown/mountain-lake-views-1",
     bed : 2,
     bath : 2,
     food : '<h3>We provide:</h3>' +
@@ -117,6 +121,7 @@ var accom = [
     maxNight : 15,
     type : "House",
     latlng: {lat: -45.026, lng: 168.683,},
+    link: "https://www.trademe.co.nz/property/residential-property-to-rent/auction-2418405947.htm?rsqid=d42ed495a99642448946318fc8ab8815-001",
     bed : 3,
     bath : 3,
     food : '<h3>We provide:</h3>' +
@@ -132,7 +137,7 @@ var accom = [
     para : "Enjoy this fully furnished executive home in Queenstown Hill with 180 degree views of Lake Wakatipu and The Remarkables.",
   },
   {
-    name : "6 Reading Court, Jacks Point",
+      name : "6 Reading Court, Jacks Point",
     id : "a106",
     photo1 : "images/houseThreeMain.jpg",
     photo2 : "images/houseThree2.jpg",
@@ -144,6 +149,7 @@ var accom = [
     maxNight : 15,
     type : "House",
     latlng: {lat: -45.075, lng: 168.743,},
+    link: "https://www.bayleys.co.nz/4502363",
     bed : 2,
     bath : 1,
     food : '<h3>We provide:</h3>' +
@@ -168,6 +174,7 @@ var accom = [
     minNight : 1,
     maxNight : 5,
     latlng: {lat: -45.034, lng: 168.651,},
+    link: "https://www.stmoritz.co.nz/accommodation/",
     type : "Hotel",
     bed : 1,
     bath : 1,
@@ -194,6 +201,7 @@ var accom = [
     maxNight : 10,
     type : "Motel",
     latlng: {lat: -45.032, lng: 168.662,},
+    link: "https://www.booking.com/hotel/nz/four-seasons-motel.en-gb.html?aid=339463;label=msn-9I_Vg9wXaXuW6icF_0lN0g-80676755199296%3Atikwd-16530142361%3Aloc-134%3Anes%3Amte%3Adec%3Aqsfour%20seasons%20motel%20queenstown;sid=6c3367700d97d56f7292e2b6d778f90a;dest_id=900039039;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=1;hpos=1;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;srepoch=1575785012;srpvid=065d2a997ce900dc;type=total;ucfs=1&#hotelTmpl",
     bed : 2,
     bath : 1,
     food : '<h3>We provide:</h3>' +
@@ -397,7 +405,10 @@ function displayModal() {
           '<br>' +
           '$' + accom[i].pricePerNight + '/night' +
         '<br>' +
-        '$' + priceTotal + ' in total'
+        '$' + priceTotal + ' in total';
+
+        document.getElementById('modalBook').innerHTML =
+        '<a href= "'+ accom[i].link +'" target="_blank"><input type="button" name="submit" class="btn btn-lg btn-dark"  id="modalBook" value="Book Now"></a>';
       }
       var mySwiper = document.querySelector('#modalSwiper').swiper
       mySwiper.update(mySwiper = new Swiper('#modalSwiper', {
