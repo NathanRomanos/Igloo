@@ -37,6 +37,12 @@
       </div>
 
 
+      <div class="errorMessage">
+        <h2 class="">Please enter a <b>check-in</b> date and a <b>check-out</b> date</h2>
+      </div>
+      <div class="errorMessage-outer"></div>
+
+
   <!-- LANDING PAGE SEARCH FUNCTION -->
       <div class="searchBox">
 
@@ -83,7 +89,7 @@
         <div class="Searchbox-space"></div>
 
         <!-- SEARCHBOX SEARCH BUTTON -->
-        <a href="#resultsNav"><input type="button" name="submit" class="btn btn-lg btn-dark"  id="submit" value="Submit"></a>
+        <a href="#resultsNav"><input type="button" name="submit" class="btn btn-lg btn-dark submit"  id="" value="Submit"></a>
 
         <!-- FLEXBOX DIVIDING SPACE -->
         <div class="Searchbox-space">  </div>
@@ -103,6 +109,11 @@
 <!-- RESULTS CONTAINER -->
     <div id="resultsPageContainer" class="resultsPageContainer">
 
+      <div class="errorMessage">
+        <h2 class="">Please enter a <b>check-in</b> date and a <b>check-out</b> date</h2>
+      </div>
+      <div class="errorMessage-outer"></div>
+
 <!-- RESULTS CONTAINER NAV BAR -->
       <nav id="resultsNav" class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a href="#top"><img id="resultsLogo" class="navbar-brand" src="images/iglooLogo2@2x.png"></img></a>
@@ -111,10 +122,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link"><input type="text" id="" class="searchBox-date startDate" name="startDate" autocomplete="off"> <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link">  <input type="text" id="" class="searchBox-date endDate" name="endDate" autocomplete="off"></a>
-            <a class="nav-link">
-              <div class="nav-guests nav-item ">
+            <a class="nav-item nav-link"><input type="text" id="" class="searchBox-date startDate nav-search" name="startDate" autocomplete="off" placeholder="check in date"> <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link">  <input type="text" id="" class="searchBox-date endDate nav-search" name="endDate" autocomplete="off" placeholder="check out date"></a>
+            <a class="nav-link nav-item ">
+              <div class="nav-guests">
               <img id="" class="searchBox-left adultMinus" src="images/icons/rightArrow.svg"></img>
               <h2 class="adult"></h2>
               <img id="" class="searchBox-right adultPlus" src="images/icons/rightArrow.svg"></img>
@@ -126,6 +137,9 @@
                 <h2 class="child"></h2>
                 <img id="" class="searchBox-right childPlus" src="images/icons/rightArrow.svg"></img>
               </div>
+            </a>
+            <a class="nav-item nav-link">
+              <a href="#resultsNav"><input type="button" name="submit" class="btn btn-lg btn-dark submit"  id="" value="Submit"></a>
             </a>
           </div>
         </div>
@@ -240,10 +254,10 @@
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
-    <!-- Map File -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUXMR59rISxU-mg0vOHpafkR9LgSFiZm4"></script>
 
     <!-- API RESTRICTION KEY: __file_url__//Users/932400754/Desktop/* -->
+
+    <script src="js/config.json"></script>
 
     <!-- My JS Script File -->
     <script type="text/javascript" src="js/script.js"></script>

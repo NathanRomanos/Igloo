@@ -1,3 +1,11 @@
+var myKey = JSON.parse(apiKey);
+// Dynamically creating the script element
+var script = document.createElement('script');
+// Giving the src attribute to the google plug in from external json file
+script.src = 'https://maps.googleapis.com/maps/api/js?key=' + myKey[0].key + '&callback=initMap';
+// Appending to the body of index.html
+document.getElementsByTagName('body')[0].appendChild(script);
+
 console.log('Working');
 
 
@@ -217,11 +225,12 @@ var accom = [
 console.log(accom);
 
 // GLOBAL VARIABLES
-var totalNight;
+var totalNight = 0;
 var adultNumber = 1;
 var childNumber = 0;
 var id = 101;
 var markerArray = [];
+var totalStart;
 
 
 // HIDDEN ITEMS
@@ -240,6 +249,7 @@ $(".startDate").datepicker({
       var selectedDate = new Date(date);
       var msecsInADay = 86400000;
       var stDate = new Date(selectedDate.getTime() + msecsInADay);
+      totalNight = 0;
 
      //Set Minimum Date of EndDatePicker After Selected Date of StartDatePicker
       $(".endDate").datepicker( "option", "minDate", stDate );
@@ -261,8 +271,9 @@ $(".endDate").datepicker({
     var start = $('.startDate').datepicker('getDate');
     var end = $('.endDate').datepicker('getDate');
     var days   = (end - start)/1000/60/60/24;
-    console.log(days);
+    console.log(start);
     totalNight = days;
+    totalStart = start;
     return;
   }
 
@@ -433,8 +444,23 @@ function displayModal() {
 }
 
 
+// ERROR MESSAGE
+$(".errorMessage-outer").click(function(){
+  $(".errorMessage").fadeOut(100);
+  $(".errorMessage-outer").fadeOut(100);
+});
+
+
 // SUBMIT BUTTON
-$('#submit').click(function(){
+$('.submit').click(function(){
+
+if (totalNight == 0 ) {
+
+  console.log('error message');
+  $(".errorMessage").fadeIn(100);
+  $(".errorMessage-outer").fadeIn(100);
+
+} else {
 
   $("#resultsPageContainer").show();
   $(".landingPage").hide(500);
@@ -453,6 +479,8 @@ $('#submit').click(function(){
   }
   initMap();
   console.log(markerArray);
+  totalNight = 0;
+}
 
 });
 
@@ -504,7 +532,7 @@ for (var j = 0; j < accom.length; j++) {
       console.log(accom[j].name);
 
       marker.addListener('click', function(){
-        console.log(accom[j].name);
+        console.log('bruh');
 
       });
     }
